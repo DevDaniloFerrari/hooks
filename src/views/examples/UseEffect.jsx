@@ -13,9 +13,11 @@ const UseEffect = (props) => {
 
     const [number, setNumber] = useState(1)
     const [fatorial, setFatorial] = useState(1)
+    const [numberType, setNumberType] = useState();
 
     useEffect(() => {
         setFatorial(calcFatorial(number))
+        setNumberType(number % 2 > 0 ? "Ímpar" : "Par")
     }, [number]);
 
     useEffect(() => {
@@ -40,8 +42,14 @@ const UseEffect = (props) => {
                 <input type="number" className="input" value={number} onChange={(e) => setNumber(e.target.value)} />
             </div>
 
-            <SectionTitle title="Exercício #01" />
-            <div className="center"></div>
+            <SectionTitle title="Exercício #02" />
+            <div className="center">
+                <div>
+                    <span className="text">Status: </span>
+                    <span className="text red">{numberType}</span>
+                </div>
+                <input type="number" className="input" value={number} onChange={(e) => setNumber(e.target.value)} />
+            </div>
         </div>
     )
 }
