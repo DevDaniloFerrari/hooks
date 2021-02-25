@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import PageTitle from '../../components/layout/PageTitle'
 import SectionTitle from '../../components/layout/SectionTitle'
 
@@ -16,13 +16,7 @@ const UseContext = (props) => {
         })
     }
 
-    const { text, setText, number, setNumber } = useContext(AppContext)
-
-
-    useEffect(() => {
-        if (number > 2050)
-            setText('Eita!')
-    }, [number])
+    const { text, number, setNumber } = useContext(AppContext)
 
     return (
         <div className="UseContext">
